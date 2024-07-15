@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -10,9 +14,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem 0;
-	padding:2px
-	
+    padding: 10px 0;
 }
 
 header .container {
@@ -33,7 +35,7 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 2rem;
+    margin-left: 20px;
 }
 
 header nav ul li a {
@@ -41,12 +43,12 @@ header nav ul li a {
     text-decoration: none;
 }
 
-
-
 .container {
     width: 80%;
-    margin: auto;
-    overflow: hidden;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -63,10 +65,12 @@ ul {
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .instructor {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .instructor img {
@@ -98,13 +102,11 @@ ul {
     background-color: #555;
 }
 
-
-
 .main-container {
     display: flex;
     gap: 10px;
-	transition-timing-function: linear;
-	transition: width 10s, height 10s;
+    transition: width 10s, height 10s;
+    transition-timing-function: linear;
     /* responsive: true */
 }
 
@@ -133,10 +135,12 @@ ul {
 .download-btn:hover {
     background-color: #FF8800;
 }
+
 .info {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .info-img {
@@ -145,21 +149,20 @@ ul {
     border-radius: 10px;
 }
 
-
 .image-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-start;
-    width: 40%;
+    width: 100%;
+    margin-bottom: 20px;
 }
-
 
 .container {
     width: 80%;
     margin: 20px auto;
     background: #fff;
     padding: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .tabs {
@@ -174,9 +177,9 @@ ul {
 }
 
 .tab.active {
-    background-color: #d91c5c;;
+    background-color: #d91c5c;
     border-radius: 5px 5px 0 0;
-	color:white;
+    color: white;
 }
 
 .tab:not(.active):hover {
@@ -207,7 +210,6 @@ ul {
     cursor: pointer;
     display: flex;
     align-items: center;
-	
 }
 
 .curriculum-title::before {
@@ -229,6 +231,7 @@ ul {
 .sublist li {
     padding: 10px 20px;
 }
+
 #enroll-btn {
     margin: 20px 0;
     padding: 10px 20px;
@@ -236,9 +239,9 @@ ul {
     border: none;
     cursor: pointer;
     font-size: 16px;
-	color: white;
-	display: block;
-	 margin: 20px auto;
+    color: white;
+    display: block;
+    margin: 20px auto;
 }
 
 #enroll-btn:hover {
@@ -261,14 +264,18 @@ ul {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #enroll-form {
+    flex: 1;
     display: flex;
-    
-	background-color: white;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
+    background-color: white;
     border-radius: 8px;
 }
 
@@ -279,6 +286,7 @@ ul {
 #enroll-form input {
     padding: 10px;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 #enroll-form button {
@@ -287,26 +295,67 @@ ul {
     border: none;
     cursor: pointer;
     font-size: 16px;
-	gap:2px;
-	margin-bottom:3px;
-	color:white;
-	align:center;
+    color: white;
+    margin-bottom: 10px;
 }
 
 #enroll-form button:hover {
     background-color: #ffb300;
 }
+
 .image-container {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-	
 }
 
 .image-container img {
     max-width: 100%;
     height: auto;
-	
 }
 
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .instructors {
+        flex-direction: column;
+    }
+
+    .info {
+        flex-direction: column;
+    }
+
+    .image-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form-flex {
+        flex-direction: column;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+}
